@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  freakyfashionservices.catalog:
+    image: ${DOCKER_REGISTRY-}freakyfashionservicescatalog
+    build:
+      context: .
+      dockerfile: FreakyFashionServices.Catalog/Dockerfile
+
+  freakyfashionservices.basket:
+    image: ${DOCKER_REGISTRY-}freakyfashionservicesbasket
+    build:
+      context: .
+      dockerfile: FreakyFashionServices.Basket/Dockerfile
+
