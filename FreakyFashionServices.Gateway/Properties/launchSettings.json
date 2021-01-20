@@ -2,12 +2,8 @@
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
-    "iis": {
-      "applicationUrl": "http://localhost/FreakyFashionServices.Basket",
-      "sslPort": 0
-    },
     "iisExpress": {
-      "applicationUrl": "http://localhost:56233",
+      "applicationUrl": "http://localhost:59079",
       "sslPort": 0
     }
   },
@@ -21,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "FreakyFashionServices.Basket": {
+    "FreakyFashionServices.Gateway": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",

@@ -59,7 +59,7 @@ namespace FreakyFashionServices.Basket.Controllers
             }
         }
 
-        // PUT /carts
+        // PUT /carts/{id}
         [HttpPut("{cartId}")]
         public async Task<IActionResult> AddCartContents(string cartId, CartDto cartDto)
         {

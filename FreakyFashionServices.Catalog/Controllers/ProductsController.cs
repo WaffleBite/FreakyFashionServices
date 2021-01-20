@@ -11,19 +11,35 @@ namespace FreakyFashionServices.Catalog.Controllers
     [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
-        public ApplicationDbContext _context { get; }
+        private readonly ApplicationDbContext _context;
 
         public ProductsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET api/products
+        //GET api/products
         [HttpGet]
-        public ActionResult<IEnumerable<Product>> GetProductItems()
+        public ActionResult<List<Product>> GetProductItems()
         {
-            return _context.Products;
+
+            return _context.Products.ToList();
         }
+
+        //[HttpGet]
+        //public async Task<ActionResult<IEnumerable<ProductDto>>> GetProductItems()
+        //{
+        //    var products = from x in _context.Products
+        //                   select new ProductDto()
+        //                   {
+        //                       Id = x.Id,
+        //                       ArticleNumber = x.ArticleNumber,
+        //                       Name = x.Name,
+        //                       Description = x.Description,
+        //                       AvailableStock = x.AvailableStock
+        //                   };
+        //    return await products.ToListAsync();
+        //}
 
         // GET api/products/1
         [HttpGet("{id}")]

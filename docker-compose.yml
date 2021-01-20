@@ -13,3 +13,24 @@ services:
       context: .
       dockerfile: FreakyFashionServices.Basket/Dockerfile
 
+
+  freakyfashionservices.gateway:
+    image: ${DOCKER_REGISTRY-}freakyfashionservicesgateway
+    build:
+      context: .
+      dockerfile: FreakyFashionServices.Gateway/Dockerfile
+
+
+  freakyfashionservices.pricecatalog:
+    image: ${DOCKER_REGISTRY-}freakyfashionservicespricecatalog
+    build:
+      context: .
+      dockerfile: FreakyFashionServices.PriceCatalog/Dockerfile
+
+
+  freakyfashionservices.order:
+    image: ${DOCKER_REGISTRY-}freakyfashionservicesorder
+    build:
+      context: .
+      dockerfile: FreakyFashionServices.Order/Dockerfile
+

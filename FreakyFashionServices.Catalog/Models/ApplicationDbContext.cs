@@ -17,9 +17,9 @@ namespace FreakyFashionServices.Catalog.Models
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Product>()
-                .Property(p => p.Price)
-                .HasColumnType("decimal(18,2)");
+            //modelBuilder.Entity<Product>()
+            //    .Property(p => p.Price)
+            //    .HasColumnType("decimal(18,2)");
 
             SeedProducts(modelBuilder);
         }
@@ -28,11 +28,11 @@ namespace FreakyFashionServices.Catalog.Models
         {
             var products = new List<Product>
             {
-                new Product(1, "White T-shirt", "Must have basic t-shirt.", 200, 25),
-                new Product(2, "Black T-shirt", "Must have basic t-shirt.", 200, 20),
-                new Product(3, "Pink T-shirt", "Must have basic t-shirt.", 200, 34),
-                new Product(4, "Casual Black Dress", "A casual black dress.", 590, 4),
-                new Product(5, "Dotted Shirt", "A nice shirt for parties.", 365, 17),
+                new Product(1, "ABC123", "White T-shirt", "Must have basic t-shirt.", 200, 25),
+                new Product(2, "BCA123", "Black T-shirt", "Must have basic t-shirt.", 200, 20),
+                new Product(3, "AAA123", "Pink T-shirt", "Must have basic t-shirt.", 200, 34),
+                new Product(4, "BBB123", "Casual Black Dress", "A casual black dress.", 590, 4),
+                new Product(5, "CCC123", "Dotted Shirt", "A nice shirt for parties.", 365, 17),
             };
             products.ForEach(x => modelBuilder.Entity<Product>().HasData(x));
         }

@@ -3,27 +3,32 @@ using FreakyFashionServices.Catalog.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FreakyFashionServices.Catalog.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ProductContextModelSnapshot : ModelSnapshot
+    [Migration("20210120081759_Add articleNumber to Product.cs")]
+    partial class AddarticleNumbertoProductcs
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.1");
+                .HasAnnotation("ProductVersion", "5.0.2");
 
-            modelBuilder.Entity("FreakyFashionServices.Catalog.Models.Product", b =>
+            modelBuilder.Entity("FreakyFashionServices.Catalog.Models.Domain.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
+
+                    b.Property<string>("ArticleNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("AvailableStock")
                         .HasColumnType("int");
@@ -34,8 +39,8 @@ namespace FreakyFashionServices.Catalog.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -45,42 +50,47 @@ namespace FreakyFashionServices.Catalog.Migrations
                         new
                         {
                             Id = 1,
+                            ArticleNumber = "ABC123",
                             AvailableStock = 25,
                             Description = "Must have basic t-shirt.",
                             Name = "White T-shirt",
-                            Price = 200m
+                            Price = 200
                         },
                         new
                         {
                             Id = 2,
+                            ArticleNumber = "BCA123",
                             AvailableStock = 20,
                             Description = "Must have basic t-shirt.",
                             Name = "Black T-shirt",
-                            Price = 200m
+                            Price = 200
                         },
                         new
                         {
                             Id = 3,
+                            ArticleNumber = "AAA123",
                             AvailableStock = 34,
                             Description = "Must have basic t-shirt.",
                             Name = "Pink T-shirt",
-                            Price = 200m
+                            Price = 200
                         },
                         new
                         {
                             Id = 4,
+                            ArticleNumber = "BBB123",
                             AvailableStock = 4,
                             Description = "A casual black dress.",
                             Name = "Casual Black Dress",
-                            Price = 590m
+                            Price = 590
                         },
                         new
                         {
                             Id = 5,
+                            ArticleNumber = "CCC123",
                             AvailableStock = 17,
                             Description = "A nice shirt for parties.",
                             Name = "Dotted Shirt",
-                            Price = 365m
+                            Price = 365
                         });
                 });
 #pragma warning restore 612, 618

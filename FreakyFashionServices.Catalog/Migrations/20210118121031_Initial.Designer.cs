@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FreakyFashionServices.Catalog.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210106150623_update database")]
-    partial class updatedatabase
+    [Migration("20210118121031_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -18,9 +18,9 @@ namespace FreakyFashionServices.Catalog.Migrations
             modelBuilder
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.1");
+                .HasAnnotation("ProductVersion", "5.0.2");
 
-            modelBuilder.Entity("FreakyFashionServices.Catalog.Models.Product", b =>
+            modelBuilder.Entity("FreakyFashionServices.Catalog.Models.Domain.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -36,8 +36,8 @@ namespace FreakyFashionServices.Catalog.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -50,7 +50,7 @@ namespace FreakyFashionServices.Catalog.Migrations
                             AvailableStock = 25,
                             Description = "Must have basic t-shirt.",
                             Name = "White T-shirt",
-                            Price = 200m
+                            Price = 200
                         },
                         new
                         {
@@ -58,7 +58,7 @@ namespace FreakyFashionServices.Catalog.Migrations
                             AvailableStock = 20,
                             Description = "Must have basic t-shirt.",
                             Name = "Black T-shirt",
-                            Price = 200m
+                            Price = 200
                         },
                         new
                         {
@@ -66,7 +66,7 @@ namespace FreakyFashionServices.Catalog.Migrations
                             AvailableStock = 34,
                             Description = "Must have basic t-shirt.",
                             Name = "Pink T-shirt",
-                            Price = 200m
+                            Price = 200
                         },
                         new
                         {
@@ -74,7 +74,7 @@ namespace FreakyFashionServices.Catalog.Migrations
                             AvailableStock = 4,
                             Description = "A casual black dress.",
                             Name = "Casual Black Dress",
-                            Price = 590m
+                            Price = 590
                         },
                         new
                         {
@@ -82,7 +82,7 @@ namespace FreakyFashionServices.Catalog.Migrations
                             AvailableStock = 17,
                             Description = "A nice shirt for parties.",
                             Name = "Dotted Shirt",
-                            Price = 365m
+                            Price = 365
                         });
                 });
 #pragma warning restore 612, 618
