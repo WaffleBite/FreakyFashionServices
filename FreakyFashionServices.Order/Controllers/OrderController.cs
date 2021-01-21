@@ -25,8 +25,8 @@ namespace FreakyFashionServices.Order.Controllers
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = client.GetAsync("http://localhost:56233/carts/" + customerId).Result;
-            var cartDto = response.Content.ReadAsStringAsync().Result;
+            HttpResponseMessage response = await client.GetAsync("http://localhost:56233/carts/" + customerId);
+            var cartDto = await response.Content.ReadAsStringAsync();
 
             var dto = new Customer
             (
